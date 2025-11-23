@@ -2,6 +2,23 @@
 
 This guide will help you deploy the Kindness Fund website to your private server at dokindthings.fund.
 
+## GitHub to Gitea Mirror Setup
+
+This repository is configured to automatically mirror changes from GitHub to Gitea using GitHub Actions. To enable this:
+
+1. **Go to your GitHub repository settings**: https://github.com/Jeff-Emmett/kindness-fund-website/settings/secrets/actions
+
+2. **Add the following secrets**:
+   - `GITEA_USERNAME`: Your Gitea username (e.g., `jeffemmett`)
+   - `GITEA_TOKEN`: Your Gitea API token (the same one you used earlier: `da10d10da546ac78490140871536cf48166d5c92`)
+
+3. **The workflow will automatically**:
+   - Trigger on every push to the main/master branch
+   - Push all branches and tags to your Gitea instance
+   - Can also be manually triggered from the Actions tab
+
+This ensures bidirectional syncing between GitHub and Gitea.
+
 ## Prerequisites
 
 - Docker and Docker Compose installed on your server
