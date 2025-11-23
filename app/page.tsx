@@ -23,7 +23,7 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100">
               Turn Kindness into <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-pulse">
-                Infinite Value
+                #RealValue
               </span>
             </h1>
 
