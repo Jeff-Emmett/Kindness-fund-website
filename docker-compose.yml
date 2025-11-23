@@ -1,0 +1,17 @@
+services:
+  kindness-fund-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kindness-fund-website
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
