@@ -5,7 +5,7 @@ import { initialActs } from "@/lib/mock-data"
 import { FlowVisual } from "./flow-visual"
 import { Slider } from "@/components/ui/slider"
 import { Button } from "@/components/ui/button"
-import { ArrowUpRight, Droplets, TrendingUp } from "lucide-react"
+import { ArrowUpRight, Droplets, TrendingUp, Award } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const categoryColors: Record<string, string> = {
@@ -26,6 +26,8 @@ const categoryHex: Record<string, string> = {
 
 export function AllocationDashboard() {
   const [acts, setActs] = useState(initialActs)
+  const [userKindnessScore] = useState(3) // Number of acts done by current user
+  const [userAllocationPower] = useState(Math.min(100, userKindnessScore * 25)) // % of pool they can allocate
   const [totalFlow, setTotalFlow] = useState(acts.reduce((acc, act) => acc + act.allocation, 0))
 
   const handleAllocationChange = (id: string, newValue: number[]) => {
@@ -38,18 +40,32 @@ export function AllocationDashboard() {
   return (
     <div className="w-full bg-background/50 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden flex flex-col min-h-[800px] relative">
       {/* Header / Source */}
-      <div className="relative z-20 p-8 border-b border-white/5 bg-black/20 text-center">
-        <div className="inline-flex flex-col items-center justify-center">
-          <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-4 ring-4 ring-primary/10 animate-pulse">
-            <Droplets className="w-8 h-8 text-primary" />
+      <div className="relative z-20 p-8 border-b border-white/5 bg-black/20">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="inline-flex flex-col items-center md:items-start justify-center">
+            <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-4 ring-4 ring-primary/10 animate-pulse">
+              <Droplets className="w-8 h-8 text-primary" />
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight text-center md:text-left">Kind Acts Pool</h2>
+            <div className="flex items-center space-x-2 mt-2 text-muted-foreground">
+              <TrendingUp className="w-4 h-4" />
+              <span>
+                Total Active Flow:{" "}
+                <span className="text-primary font-mono font-bold">${totalFlow.toLocaleString()}</span> / hr
+              </span>
+            </div>
           </div>
-          <h2 className="text-3xl font-bold tracking-tight">Community Stream Source</h2>
-          <div className="flex items-center space-x-2 mt-2 text-muted-foreground">
-            <TrendingUp className="w-4 h-4" />
-            <span>
-              Total Active Flow: <span className="text-primary font-mono font-bold">${totalFlow.toLocaleString()}</span>{" "}
-              / hr
-            </span>
+
+          <div className="glass rounded-2xl p-6 bg-secondary/5 border border-secondary/20 text-center md:text-right">
+            <div className="flex items-center justify-center md:justify-end space-x-2 mb-2">
+              <Award className="w-5 h-5 text-secondary" />
+              <p className="text-sm text-muted-foreground font-medium">Your Allocation Power</p>
+            </div>
+            <p className="text-4xl font-bold text-secondary">{userAllocationPower}%</p>
+            <p className="text-xs text-muted-foreground mt-2">
+              Based on <span className="text-secondary font-bold">{userKindnessScore}</span> acts of kindness
+            </p>
+            <p className="text-xs text-muted-foreground mt-1 italic">Do more kindness to increase your influence</p>
           </div>
         </div>
       </div>

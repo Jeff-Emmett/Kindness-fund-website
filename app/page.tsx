@@ -76,6 +76,97 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Kind Acts Pool explanation section */}
+        <section className="py-24 container mx-auto px-4">
+          <div className="glass rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            {/* Background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 opacity-50" />
+
+            <div className="relative z-10 space-y-8">
+              <div className="text-center max-w-3xl mx-auto space-y-4">
+                <h2 className="text-4xl md:text-5xl font-bold">
+                  The <span className="text-primary">Kind Acts Pool</span>
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  A communal fund that anyone can contribute to, and the community collectively directs toward acts of
+                  kindness
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">Open Contribution</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Anyone can seed the Kind Acts Pool with funds. Every contribution grows the collective ability
+                        to reward kindness in the community.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                      <Heart className="w-6 h-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">Community Allocation</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Members direct the flow of funds to acts they find meaningful. The more acts of kindness you've
+                        done, the greater your allocation power.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
+                      <Share2 className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">No Account Required to Receive</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Recipients don't need to be members. They receive an email notification that #RealValue is
+                        waiting for them as a reward for their kindness.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <ArrowRight className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">Earn Allocation Power</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Do more acts of kindness, gain more influence. Your history of good deeds amplifies your voice
+                        in directing the pool to others.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-8 text-center">
+                <div className="inline-flex flex-col items-center space-y-4 glass rounded-2xl p-6 bg-white/5">
+                  <p className="text-sm text-muted-foreground uppercase tracking-widest font-medium">
+                    Current Pool Balance
+                  </p>
+                  <p className="text-5xl font-bold text-primary font-mono">$18,450</p>
+                  <Button className="rounded-full bg-primary hover:bg-primary/90 text-background font-bold shadow-[0_0_20px_rgba(0,243,255,0.4)] transition-all hover:scale-105">
+                    Seed the Pool
+                    <Zap className="ml-2 h-4 w-4 fill-current" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Submission Form Section */}
         <section id="submit" className="py-24 relative">
           <div className="container mx-auto px-4">
