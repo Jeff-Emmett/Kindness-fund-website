@@ -32,6 +32,10 @@ export default function Home() {
               for real-world impact.
             </p>
 
+            <p className="text-lg md:text-xl italic text-primary/80 max-w-xl animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-250 font-medium tracking-wide">
+              It&apos;s not about making money &mdash; it&apos;s about making <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary font-bold not-italic uppercase">change</span>.
+            </p>
+
             <div className="flex flex-col sm:flex-row gap-4 w-full justify-center pt-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
               <Button
                 size="lg"
@@ -89,7 +93,7 @@ export default function Home() {
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   A communal fund that anyone can contribute to, and the community collectively directs toward acts of
-                  kindness
+                  kindness. Because it&apos;s not about making money &mdash; it&apos;s about making <span className="text-accent font-semibold">change</span>.
                 </p>
               </div>
 
@@ -186,6 +190,7 @@ export default function Home() {
                     { title: "Transparency", desc: "All allocations are visible on the public stream." },
                     { title: "Direct Impact", desc: "Funds flow directly to the acts deemed most valuable." },
                     { title: "Community Governed", desc: "The collective decides where the stream flows." },
+                    { title: "Not Money — Change", desc: "It's not about making money, it's about making change. Every act ripples outward." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start space-x-4">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5" />
@@ -203,6 +208,35 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-3xl blur-3xl -z-10 transform rotate-3 scale-105" />
                 <SubmissionForm />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Funz Quest Crossover Banner */}
+        <section className="py-16 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 via-primary/5 to-accent/5" />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="glass rounded-2xl p-8 md:p-10 text-center max-w-3xl mx-auto border border-primary/20">
+              <p className="text-2xl md:text-3xl font-bold mb-4">
+                It&apos;s not about making money &mdash; it&apos;s about making{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-pulse">
+                  CHANGE
+                </span>.
+              </p>
+              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+                And sometimes making change starts with having a little fun. Join the quest for funz &mdash; where
+                vibes become value and kindness becomes currency.
+              </p>
+              <a
+                href="https://funz.quest"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 hover:border-white/40 px-6 py-3 text-sm font-medium transition-all hover:scale-105 backdrop-blur-sm"
+              >
+                <span>🎲</span>
+                <span>Begin the Quest for Funz</span>
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </section>

@@ -35,6 +35,14 @@ export function Header() {
           >
             How it Works
           </Link>
+          <a
+            href="https://funz.quest"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-muted-foreground hover:text-secondary transition-colors flex items-center gap-1"
+          >
+            🎲 Funz Quest
+          </a>
         </nav>
 
         <div className="flex items-center space-x-4">
